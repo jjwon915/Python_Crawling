@@ -6,5 +6,8 @@ app = Flask(__name__)
 def hello_world():
     return render_template("index.html")
 
+@app.route('/result', methods=['POST'])
+def result():
+
 if __name__ == '__main__':
     app.run()
