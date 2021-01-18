@@ -5,9 +5,12 @@
     <title>Title</title>
 </head>
 <body>
-    {% for i in daum_list %}
-    <li>{{ i }}</li>
-    {% endfor %}
+    <ul>
+        {% for i in daum_list %}
+        <li>{{ i }}</li>
+        {% endfor %}
+    </ul>
+    <a href="static/result.xlsx">Download Excel File</a>
 
 </body>
 </html>
