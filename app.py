@@ -1,4 +1,4 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, request
 
 app = Flask(__name__)
 
@@ -8,6 +8,10 @@ def hello_world():
 
 @app.route('/result', methods=['POST'])
 def result():
+    print(request.form['input1'])
+    print(request.form['input2'])
+
+    return render_template("result.html")
 
 if __name__ == '__main__':
     app.run()
