@@ -17,19 +17,26 @@
 <body>
 
     <div id="wrap">
-        <form action="/result" method="POST">
-            <div class="form-group">
-                <label for="exampleInputEmail1">Crawling Keyword</label>
-                <input type="text" class="form-control" name="input1" placeholder="키워드를 입력해주세요.">
-            </div>
+        <div>
+            <form action="/result" method="POST">
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Crawling Keyword</label>
+                    <input type="text" class="form-control" name="input1" placeholder="키워드를 입력해주세요.">
+                </div>
 
-            <div class="form-group">
-                <label for="exampleInputPassword1">Page Number</label>
-                <input type="number" class="form-control" name="input2" placeholder="페이지 수를 입력해주세요.">
-            </div>
+                <div class="form-group">
+                    <label for="exampleInputPassword1">Page Number</label>
+                    <input type="number" class="form-control" name="input2" placeholder="페이지 수를 입력해주세요.">
+                </div>
 
-            <button type="submit" class="btn btn-default">제출</button>
-        </form>
+                <button type="submit" class="btn btn-default">제출</button>
+            </form>
+        </div>
+        <div>
+            <form action="/naver_shopping">
+                <button type="submit">Naver Shopping Crawling selenium</button>
+            </form>
+        </div>
     </div>
 
 </body>
