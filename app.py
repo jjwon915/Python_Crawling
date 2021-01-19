@@ -44,11 +44,20 @@ def result():
 def naver_shopping():
     driver = webdriver.Chrome('./chromedriver')
     driver.implicitly_wait(3)
-    driver.get("https://search.shopping.naver.com/search/all?query=%EA%B3%B5%EA%B8%B0%EC%B2%AD%EC%A0%95%EA%B8%B0&cat_id=&frm=NVSHAKW")
+    driver.get("https://search.shopping.naver.com/search/all?frm=NVSHATC&origQuery=%EA%B0%90%EC%84%B1&pagingIndex=3&pagingSize=40&productSet=total&query=%EA%B0%90%EC%84%B1&sort=rel&timestamp=&viewType=list")
     soup = BeautifulSoup(driver.page_source, 'html.parser')
+
+    for i in soup.select("#__next > div > div.style_container__1YjHN > div.style_inner__18zZX > div.style_content_wrap__1PzEo > div.style_content__2T20F > ul > div > div"):
+        print(i.find("a", class_="basicList_link__1MaTN").text)
+
+    # 백화점/홈쇼핑 자동클릭되게 한 후 그 페이지 html 소스 가져오기.
+    driver.find_element_by_css_selector("#__next > div > div.style_container__1YjHN > div.style_inner__18zZX > div.style_content_wrap__1PzEo > div.style_content__2T20F > div.seller_filter_area > ul > li:nth-child(4) > a").click()
+    #driver.find_element_by_class_name("subFilter_filter__3Y-uy").click()
+
+    soup = BeautifulSoup(driver.page_source, 'html.parser')
+
     print(soup)
     return render_template("shopping.html")
-
 
 if __name__ == '__main__':
     app.run()
