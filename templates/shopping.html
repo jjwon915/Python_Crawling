@@ -6,11 +6,11 @@
 </head>
 <body>
     <ul>
-        {% for i in search_list %}
-        <li>{{ i }}</li>
+        {% for i in range(1, len) %}
+        <li><img src={{ search_list_src[i] }}></li>
+        <li>{{ search_list[i] }}</li>
         {% endfor %}
     </ul>
-    <a href="static/result.xlsx">Download Excel File</a>
 
 </body>
 </html>
