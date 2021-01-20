@@ -5,6 +5,12 @@
     <title>Title</title>
 </head>
 <body>
+    <ul>
+        {% for i in search_list %}
+        <li>{{ i }}</li>
+        {% endfor %}
+    </ul>
+    <a href="static/result.xlsx">Download Excel File</a>
 
 </body>
 </html>
